@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title>Prediction Result</title>
+
+    <style>
+
+        body{
+            font-family: Arial;
+            background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+            color: white;
+            text-align: center;
+            padding-top: 100px;
+        }
+
+        .result-box{
+            width: 500px;
+            margin: auto;
+            background: rgba(255,255,255,0.1);
+            padding: 40px;
+            border-radius: 15px;
+        }
+
+        h1{
+            color: #ffcc00;
+        }
+
+        a{
+            text-decoration: none;
+            color: white;
+            font-size: 18px;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <div class="result-box">
+
+        <h1>🏆 Predicted Winner</h1>
+
+        <h2>{{ winner }}</h2>
+
+        <br><br>
+
+        <a href="/">⬅ Go Back</a>
+
+    </div>
+
+</body>
+</html>

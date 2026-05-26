@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>IPL Winner Prediction</title>
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='style.css') }}"
+    >
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>🏏 IPL Match Winner Predictor</h1>
+
+        <form action="/predict" method="POST">
+
+            <select name="team1" required>
+
+                <option value="">Select Team 1</option>
+
+                {% for team in teams %}
+
+                <option value="{{ team }}">
+                    {{ team }}
+                </option>
+
+                {% endfor %}
+
+            </select>
+
+            <select name="team2" required>
+
+                <option value="">Select Team 2</option>
+
+                {% for team in teams %}
+
+                <option value="{{ team }}">
+                    {{ team }}
+                </option>
+
+                {% endfor %}
+
+            </select>
+
+            <select name="toss_winner" required>
+
+                <option value="">Select Toss Winner</option>
+
+                {% for team in teams %}
+
+                <option value="{{ team }}">
+                    {{ team }}
+                </option>
+
+                {% endfor %}
+
+            </select>
+
+            <select name="toss_decision" required>
+
+                <option value="">Select Toss Decision</option>
+
+                <option value="bat">Bat</option>
+
+                <option value="field">Field</option>
+
+            </select>
+
+            <select name="venue" required>
+
+                <option value="">Select Venue</option>
+
+                {% for venue in venues %}
+
+                <option value="{{ venue }}">
+                    {{ venue }}
+                </option>
+
+                {% endfor %}
+
+            </select>
+
+            <button type="submit">
+                Predict Winner
+            </button>
+
+        </form>
+
+        {% if prediction_text %}
+
+        <h2>
+            {{ prediction_text }}
+        </h2>
+
+        {% endif %}
+
+    </div>
+
+</body>
+
+</html>
